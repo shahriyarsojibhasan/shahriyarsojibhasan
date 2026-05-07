@@ -1,481 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shahriyar | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Shahriyar Sojib Hasan | Full-Stack Developer & Ethical Hacker</title>
+    <meta name="description" content="Portfolio of Shahriyar Sojib Hasan. Expert in Full Stack Development, Crypto Analytics, Blockchain Research, Ethical Hacking, and AI Automation.">
+    <meta name="keywords" content="Shahriyar Sojib Hasan, Shahriyar SYS, Full Stack Developer Bangladesh, Ethical Hacker Bangladesh, Crypto Analytics, OSINT, Infinity Course, AI Builder">
+    <meta name="author" content="Shahriyar Sojib Hasan">
+    <meta name="robots" content="index, follow">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shahriyar Sojib Hasan | Digital Architect">
+    <meta property="og:description" content="Turning volatile data into alpha. Explore my coding, hacking, and blockchain research.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/shahriyarsojibhasan/shahriyarsojibhasan.github.io/main/shahriyar.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shahriyarsojib_">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        void: '#000000',
+                        cyanNeon: '#00f2ff',
+                        magentaNeon: '#ff00e5',
+                        goldAlpha: '#f3ba2f',
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#0f172a;
-      color:#fff;
-      overflow-x:hidden;
-    }
+    <style>
+        body { background-color: #000; color: #fff; overflow-x: hidden; margin: 0; }
+        
+        /* DENSE MESH BACKGROUND (ALWAYS VISIBLE) */
+        #nexus-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; opacity: 0.9;
+        }
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+        /* ULTRA TRANSPARENT BENTO CARDS */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03); /* Almost invisible bg */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem;
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 242, 255, 0.5);
+            background: rgba(255, 255, 255, 0.06);
+            transform: scale(1.01);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        }
 
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
-
-    /* Navbar */
-
-    nav{
-      position:fixed;
-      width:100%;
-      top:0;
-      left:0;
-      background:rgba(15,23,42,0.9);
-      backdrop-filter:blur(10px);
-      z-index:1000;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
-
-    .logo{
-      font-size:24px;
-      font-weight:700;
-      color:#38bdf8;
-    }
-
-    .menu{
-      display:flex;
-      gap:25px;
-    }
-
-    .menu a{
-      transition:0.3s;
-      font-weight:500;
-    }
-
-    .menu a:hover{
-      color:#38bdf8;
-    }
-
-    /* Hero */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background:
-      linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.9)),
-      url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop') center/cover;
-    }
-
-    .hero-content h1{
-      font-size:60px;
-      margin-bottom:10px;
-    }
-
-    .hero-content h1 span{
-      color:#38bdf8;
-    }
-
-    .hero-content p{
-      color:#cbd5e1;
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      margin-bottom:30px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:14px 30px;
-      background:#38bdf8;
-      border-radius:50px;
-      color:#000;
-      font-weight:600;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-      background:#0ea5e9;
-    }
-
-    /* Sections */
-
-    section{
-      padding:100px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:40px;
-      margin-bottom:60px;
-      color:#38bdf8;
-    }
-
-    /* About */
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
-    }
-
-    .about img{
-      width:100%;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    .about-text p{
-      color:#cbd5e1;
-      line-height:1.9;
-      margin-bottom:20px;
-    }
-
-    /* Skills */
-
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .skill{
-      background:#1e293b;
-      padding:25px;
-      border-radius:20px;
-      text-align:center;
-      transition:0.3s;
-      border:1px solid rgba(255,255,255,0.05);
-    }
-
-    .skill:hover{
-      transform:translateY(-8px);
-      border-color:#38bdf8;
-    }
-
-    .skill h3{
-      margin-bottom:10px;
-    }
-
-    .skill p{
-      color:#cbd5e1;
-      font-size:14px;
-    }
-
-    /* Projects */
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-    }
-
-    .project-card{
-      background:#1e293b;
-      border-radius:20px;
-      overflow:hidden;
-      transition:0.3s;
-      border:1px solid rgba(255,255,255,0.05);
-    }
-
-    .project-card:hover{
-      transform:translateY(-8px);
-    }
-
-    .project-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
-
-    .project-content{
-      padding:20px;
-    }
-
-    .project-content h3{
-      margin-bottom:10px;
-    }
-
-    .project-content p{
-      color:#cbd5e1;
-      font-size:14px;
-      line-height:1.7;
-      margin-bottom:15px;
-    }
-
-    .project-content a{
-      color:#38bdf8;
-      font-weight:600;
-    }
-
-    /* Contact */
-
-    .contact{
-      text-align:center;
-    }
-
-    .contact p{
-      color:#cbd5e1;
-      margin-bottom:25px;
-    }
-
-    .socials{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .socials a{
-      padding:12px 20px;
-      background:#1e293b;
-      border-radius:50px;
-      transition:0.3s;
-    }
-
-    .socials a:hover{
-      background:#38bdf8;
-      color:#000;
-    }
-
-    footer{
-      text-align:center;
-      padding:25px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#94a3b8;
-      font-size:14px;
-    }
-
-    /* Responsive */
-
-    @media(max-width:900px){
-
-      .about{
-        grid-template-columns:1fr;
-      }
-
-      .hero-content h1{
-        font-size:42px;
-      }
-
-      .menu{
-        gap:15px;
-        font-size:14px;
-      }
-    }
-
-    @media(max-width:600px){
-
-      .hero-content h1{
-        font-size:34px;
-      }
-
-      .section-title{
-        font-size:32px;
-      }
-
-      .menu{
-        display:none;
-      }
-    }
-  </style>
+        .glow-cyan { text-shadow: 0 0 10px #00f2ff; }
+        .glow-gold { text-shadow: 0 0 10px #f3ba2f; }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #00f2ff; border-radius: 10px; }
+    </style>
 </head>
-<body>
+<body class="font-mono antialiased selection:bg-cyanNeon selection:text-black">
 
-  <!-- Navbar -->
+    <canvas id="nexus-canvas"></canvas>
 
-  <nav>
-    <div class="container nav-content">
-      <div class="logo">Shahriyar</div>
-
-      <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-
-  <section class="hero" id="home">
-    <div class="hero-content container">
-      <h1>Hello, I'm <span>Shahriyar</span></h1>
-
-      <p>
-        Creative developer, content creator, and tech enthusiast.
-        I build modern websites, design digital experiences,
-        and work on innovative online projects.
-      </p>
-
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
-
-  <!-- About -->
-
-  <section id="about">
-    <div class="container">
-
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about">
-
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Profile">
-
-        <div class="about-text">
-          <p>
-            I'm Shahriyar, passionate about technology, design, and digital creativity.
-            I enjoy creating responsive websites, social media content,
-            and modern user experiences.
-          </p>
-
-          <p>
-            My goal is to build projects that look clean, work smoothly,
-            and provide real value to users.
-          </p>
-
-          <a href="#" class="btn">Download CV</a>
+    <nav class="fixed top-0 w-full z-50 p-4">
+        <div class="max-w-6xl mx-auto glass-card px-6 py-3 flex justify-between items-center">
+            <span class="font-orbitron font-black text-cyanNeon glow-cyan text-sm tracking-widest">SHAHRIYAR.SYS</span>
+            <div class="hidden md:flex gap-6 text-[9px] uppercase font-bold tracking-[0.2em]">
+                <a href="#identity" class="hover:text-cyanNeon">Protocol</a>
+                <a href="#arsenal" class="hover:text-cyanNeon">Arsenal</a>
+                <a href="#tools" class="hover:text-magentaNeon">Tools</a>
+                <a href="#crypto" class="hover:text-goldAlpha">Alpha</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-[8px] text-green-500 animate-pulse font-bold uppercase">Mainframe Active</span>
+            </div>
         </div>
+    </nav>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Skills -->
-
-  <section id="skills">
-    <div class="container">
-
-      <h2 class="section-title">My Skills</h2>
-
-      <div class="skills-grid">
-
-        <div class="skill">
-          <h3>HTML5</h3>
-          <p>Modern semantic website structure and responsive layouts.</p>
-        </div>
-
-        <div class="skill">
-          <h3>CSS3</h3>
-          <p>Clean UI design, animations, flexbox, and grid systems.</p>
-        </div>
-
-        <div class="skill">
-          <h3>JavaScript</h3>
-          <p>Interactive website features and smooth user experience.</p>
-        </div>
-
-        <div class="skill">
-          <h3>Content Creation</h3>
-          <p>Creative social media posts, visuals, and branding ideas.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Projects -->
-
-  <section id="projects">
-    <div class="container">
-
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="">
-          <div class="project-content">
-            <h3>Portfolio Website</h3>
-            <p>
-              Personal responsive portfolio website with modern UI design.
+    <main class="w-full max-w-6xl mx-auto px-4 pt-24 pb-12 grid grid-cols-1 md:grid-cols-6 gap-4">
+        
+        <div class="glass-card p-8 md:col-span-4 flex flex-col justify-center relative overflow-hidden">
+            <p class="text-cyanNeon text-[10px] uppercase tracking-[0.4em] mb-2 font-bold italic">Identity Matrix // Active</p>
+            <h1 class="font-orbitron text-4xl md:text-7xl font-black mb-4 tracking-tighter">
+                SHAHRIYAR <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanNeon via-white to-magentaNeon">SOJIB HASAN</span>
+            </h1>
+            <p class="text-gray-300 text-xs md:text-sm max-w-xl leading-relaxed mb-6 font-light">
+                Full Stack Developer ⚡ Crypto Analytics & Blockchain Research ⚡ Ethical Hacker ⚡ OSINT Specialist ⚡ AI Builder. Turning raw data into alpha since 2020.
             </p>
-            <a href="#">Live Demo</a>
-          </div>
+            <div class="flex gap-4">
+                <div class="text-center px-4 py-2 border border-white/10 rounded-lg">
+                    <span class="text-cyanNeon font-bold block text-lg">6+</span>
+                    <span class="text-[8px] text-gray-500 uppercase">Disciplines</span>
+                </div>
+                <div class="text-center px-4 py-2 border border-white/10 rounded-lg">
+                    <span class="text-magentaNeon font-bold block text-lg">∞</span>
+                    <span class="text-[8px] text-gray-500 uppercase">Ambition</span>
+                </div>
+            </div>
         </div>
 
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="">
-          <div class="project-content">
-            <h3>Creative Design</h3>
-            <p>
-              Social media graphics and creative branding concepts.
-            </p>
-            <a href="#">View Project</a>
-          </div>
+        <div class="glass-card p-6 md:col-span-2 font-mono text-[10px] space-y-2 text-cyanNeon flex flex-col justify-center">
+            <p>> initializing_sys.config...</p>
+            <p class="text-white">[+] Status: Online</p>
+            <p class="text-white">[+] Location: Bangladesh</p>
+            <p class="text-white">[+] OS: Linux (Kali/Arch)</p>
+            <p class="text-magentaNeon">> loading_arsenal...</p>
+            <p class="text-gray-500 italic">React, Node, Capacitor, Python, Rust, AI_Logic</p>
+            <p class="animate-pulse">> _</p>
         </div>
 
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
-          <div class="project-content">
-            <h3>Web Application</h3>
-            <p>
-              Simple modern web application interface with responsive layout.
-            </p>
-            <a href="#">Explore</a>
-          </div>
+        <a id="tools" href="https://shahriyartools.netlify.app/" target="_blank" class="glass-card md:col-span-3 p-8 border-magentaNeon/20 hover:border-magentaNeon group flex items-center justify-between">
+            <div>
+                <h3 class="font-orbitron font-bold text-2xl text-white group-hover:text-magentaNeon transition">TOOL_VAULT</h3>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">shahriyartools.netlify.app</p>
+            </div>
+            <i class="fas fa-external-link-alt text-2xl text-magentaNeon group-hover:rotate-45 transition duration-500"></i>
+        </a>
+
+        <div class="glass-card md:col-span-3 p-8 flex flex-col justify-center text-center">
+            <p class="text-[9px] text-gray-500 uppercase tracking-widest mb-4">Neural Network Arsenal</p>
+            <img src="https://skillicons.dev/icons?i=js,ts,python,rust,react,nextjs,nodejs,docker,mongodb,postgres,linux,github&theme=dark&perline=6" alt="Tech Stack" class="mx-auto grayscale hover:grayscale-0 transition duration-500">
         </div>
 
-      </div>
+        <div id="crypto" class="glass-card md:col-span-6 p-8 border-goldAlpha/20">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <h3 class="font-orbitron font-bold text-2xl text-goldAlpha glow-gold">ALPHA_NETWORK</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em]">Blockchain Research & Exchange Gateways</p>
+                </div>
+                <a href="https://www.binance.com/en/feed/profile/shahriyarsojibhasan-" target="_blank" class="px-6 py-2 bg-goldAlpha/10 border border-goldAlpha text-goldAlpha font-bold rounded-full text-[10px] hover:bg-goldAlpha hover:text-black transition">
+                    BINANCE SQUARE: @shahriyarsojibhasan-
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 border border-white/5 rounded-xl text-center bg-white/5">
+                    <span class="text-xs font-bold text-white block">BINANCE</span>
+                    <span class="text-[8px] text-goldAlpha uppercase font-bold">Verified Node</span>
+                </div>
+                <div class="p-4 border border-white/5 rounded-xl text-center bg-white/5">
+                    <span class="text-xs font-bold text-white block">GATE.IO</span>
+                    <span class="text-[8px] text-cyanNeon uppercase font-bold">Trading Active</span>
+                </div>
+                <div class="p-4 border border-white/5 rounded-xl text-center bg-white/5">
+                    <span class="text-xs font-bold text-white block">BYBIT</span>
+                    <span class="text-[8px] text-magentaNeon uppercase font-bold">Link Stable</span>
+                </div>
+                <div class="p-4 border border-white/5 rounded-xl text-center bg-white/5">
+                    <span class="text-xs font-bold text-white block">BITGET</span>
+                    <span class="text-[8px] text-white uppercase font-bold">Researching</span>
+                </div>
+            </div>
+        </div>
 
-    </div>
-  </section>
+        <div id="arsenal" class="glass-card md:col-span-3 p-8">
+            <i class="fas fa-graduation-cap text-2xl text-cyanNeon mb-4"></i>
+            <h4 class="font-orbitron font-bold text-xl mb-2">Infinity Course ™</h4>
+            <p class="text-xs text-gray-400 leading-relaxed">Full-scale EdTech ecosystem for HSC students. Features M3U8 encryption, live streaming, and Capacitor mobile integration. Built with React & Firebase.</p>
+        </div>
+        <div class="glass-card md:col-span-3 p-8">
+            <i class="fab fa-x-twitter text-2xl text-magentaNeon mb-4"></i>
+            <h4 class="font-orbitron font-bold text-xl mb-2">Twitter AI Engine</h4>
+            <p class="text-xs text-gray-400 leading-relaxed">Sophisticated automation assistant with human-like delay logic, auto-reply, and engagement boosting via AI-driven OSINT analytics.</p>
+        </div>
 
-  <!-- Contact -->
+        <div class="glass-card md:col-span-6 p-8 flex flex-col items-center">
+            <h4 class="font-orbitron font-bold text-sm tracking-[0.5em] text-gray-500 mb-8">ESTABLISH_COMM_LINK</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://twitter.com/shahriyarsojib_" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-white hover:text-black"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://facebook.com/shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-[#1877F2] hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://linkedin.com/in/shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-[#0A66C2] hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-[#E4405F] hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-white hover:text-black"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/@shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center hover:bg-[#FF0000] hover:text-white"><i class="fab fa-youtube"></i></a>
+                <a href="https://buymeacoffee.com/shahriyarsojibhasan" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center text-[#FFDD00] border-[#FFDD00]/30 hover:bg-[#FFDD00] hover:text-black"><i class="fas fa-mug-hot"></i></a>
+            </div>
+        </div>
 
-  <section id="contact">
-    <div class="container contact">
+    </main>
 
-      <h2 class="section-title">Contact Me</h2>
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="font-orbitron text-xs text-white/20 mb-2 italic tracking-tighter">SHAHRIYAR.SYS // DATA ARCHITECT</p>
+        <p class="text-[10px] text-gray-600 font-mono tracking-[0.4em]">
+            &copy; 2020 - <span id="year"></span> SHAHRIYAR SOJIB HASAN. ALL RIGHTS RESERVED.
+        </p>
+    </footer>
 
-      <p>
-        Interested in working together or need a website?
-        Feel free to connect with me.
-      </p>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shahriyar Sojib Hasan",
+      "url": "https://shahriyarsojibhasan.github.io/",
+      "jobTitle": "Full Stack Developer & Ethical Hacker",
+      "sameAs": [
+        "https://twitter.com/shahriyarsojib_",
+        "https://github.com/shahriyarsojibhasan",
+        "https://facebook.com/shahriyarsojibhasan",
+        "https://www.binance.com/en/feed/profile/shahriyarsojibhasan-"
+      ]
+    }
+    </script>
 
-      <div class="socials">
-        <a href="https://github.com/" target="_blank">GitHub</a>
-        <a href="https://facebook.com/" target="_blank">Facebook</a>
-        <a href="https://instagram.com/" target="_blank">Instagram</a>
-        <a href="mailto:yourmail@gmail.com">Email</a>
-      </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    </div>
-  </section>
+        const canvas = document.getElementById('nexus-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 180 };
 
-  <!-- Footer -->
+        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('touchmove', (e) => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; });
 
-  <footer>
-    © 2026 Shahriyar. All Rights Reserved.
-  </footer>
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        }
 
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.density = (Math.random() * 25) + 1;
+                this.vx = (Math.random() - 0.5) * 1.2;
+                this.vy = (Math.random() - 0.5) * 1.2;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 242, 255, 0.85)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (mouse.radius - distance) / mouse.radius;
+                    this.x -= forceDirectionX * force * this.density;
+                    this.y -= forceDirectionY * force * this.density;
+                }
+            }
+        }
+
+        function init() {
+            particles = [];
+            let divisor = window.innerWidth < 768 ? 6000 : 3500; // Super Dense
+            const numberOfParticles = (canvas.width * canvas.height) / divisor; 
+            for (let i = 0; i < numberOfParticles; i++) { particles.push(new Particle()); }
+        }
+
+        function connect() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 130) {
+                        ctx.strokeStyle = `rgba(0, 242, 255, ${0.3 * (1 - distance/130)})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+    </script>
 </body>
 </html>
