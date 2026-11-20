@@ -1,0 +1,11 @@
+# CRITICAL PRIVACY GUARD — NEVER COMMIT PLAINTEXT FACE OR SECRETS!
+photo-cutout.png
+photo-cutout.*
+shahriyar.jpg
+shahriyar*.*
+!photo-semi.webp
+!shahriyar-avatar-dotted.png
+*.enc
+.env
+.env.*
+node_modules/
